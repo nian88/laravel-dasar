@@ -43,7 +43,6 @@ Route::get('/list-user', function () {
     return 'Halaman Class';
 })->name('users');
 
-
 /* Route Without Group */
 Route::get('/student/list', function () {
     return 'Halaman Daftar Siswa';
@@ -55,16 +54,26 @@ Route::patch('/student/patch', function () {
     return 'Halaman Update Siswa';
 });
 
-
 /* Route With Group */
 Route::prefix('student')->group(function () {
     Route::get('/list', function () {
         return 'Halaman Daftar Siswa';
     });
+
     Route::post('/store', function () {
         return 'Halaman Tambah Siswa';
     });
+
     Route::patch('/patch', function () {
         return 'Halaman Update Siswa';
     });
+
+    /* Redirect */
+    Route::redirect('/youtube', '/greeting');
+
+    /* Fallback Route */
+    Route::fallback(function () {
+        return 'Halaman 404';
+    });
+
 });
