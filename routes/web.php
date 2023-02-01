@@ -91,3 +91,4 @@ Route::prefix('product')->group(function () {
 /* 05 Response */
 Route::get('/response/hello', [\App\Http\Controllers\ResponseController::class, 'response']);
 Route::get('/response/json', [\App\Http\Controllers\ResponseController::class, 'json']);
+Route::get('/response/download', [\App\Http\Controllers\ResponseController::class, 'download']);
