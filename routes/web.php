@@ -79,3 +79,11 @@ Route::fallback(function () {
 
 /* 03 Controller */
 Route::get('/hello', [\App\Http\Controllers\HelloController::class, 'hello']);
+
+/* 04 Request */
+Route::prefix('product')->group(function () {
+    Route::get('/store', [
+        \App\Http\Controllers\ProductController::class,
+        'store'
+    ]);
+});
