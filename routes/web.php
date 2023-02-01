@@ -67,13 +67,15 @@ Route::prefix('student')->group(function () {
     Route::patch('/patch', function () {
         return 'Halaman Update Siswa';
     });
-
-    /* Redirect */
-    Route::redirect('/youtube', '/greeting');
-
-    /* Fallback Route */
-    Route::fallback(function () {
-        return 'Halaman 404';
-    });
-
 });
+
+/* Redirect */
+Route::redirect('/youtube', '/greeting');
+
+/* Fallback Route */
+Route::fallback(function () {
+    return 'Halaman 404';
+});
+
+/* 03 Controller */
+Route::get('/hello', [\App\Http\Controllers\HelloController::class, 'hello']);
