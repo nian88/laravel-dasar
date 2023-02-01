@@ -87,3 +87,6 @@ Route::prefix('product')->group(function () {
         'store'
     ]);
 });
+
+/* 05 Response */
+Route::get('/response/hello', [\App\Http\Controllers\ResponseController::class, 'response']);
