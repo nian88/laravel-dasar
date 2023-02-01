@@ -22,4 +22,8 @@ class ResponseController extends Controller
         $pathToFile =  storage_path('app/public/sample.txt');
         return response()->download($pathToFile);
     }
+
+    public function view(Request $request){
+        return view('welcome');
+    }
 }
